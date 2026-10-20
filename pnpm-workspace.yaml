@@ -1,5 +1,8 @@
 packages:
   - "apps/*"
 allowBuilds:
-  '@parcel/watcher': set this to true or false
-  unrs-resolver: set this to true or false
+  '@parcel/watcher': true
+  '@prisma/engines': set this to true or false
+  esbuild: true
+  prisma: set this to true or false
+  unrs-resolver: true
