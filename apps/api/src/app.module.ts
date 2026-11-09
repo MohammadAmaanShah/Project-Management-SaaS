@@ -5,15 +5,17 @@ import { AppService } from './app.service';
 import { PrismaModule } from './prisma/prisma.module';
 import { HealthController } from './health/health.controller';
 import { envValidationSchema } from './config/env.validation';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
       validationSchema: envValidationSchema,
-      envFilePath: '../../.env',
+      envFilePath: ['.env', '../../.env', '../.env'],
     }),
     PrismaModule,
+    AuthModule,
   ],
   controllers: [AppController, HealthController],
   providers: [AppService],
